@@ -110,7 +110,7 @@ return (
 </TabsContent>
 <TabsContent value="react-native">
 ```tsx
-import { ThirdwebProvider, ConnectWallet, smartWallet, embeddedWallet } from "@thirdweb-dev/react-native";
+import { ThirdwebProvider, ConnectWallet, smartWallet, inAppWallet } from "@thirdweb-dev/react-native";
 
 export default function App() {
 return (
@@ -119,7 +119,7 @@ return (
       activeChain="sepolia"
       supportedWallets={[
         smartWallet(
-          embeddedWallet(), // any personal wallet
+          inAppWallet(), // any personal wallet
           {
             factoryAddress: "0x...", // your deployed factory address
             gasless: true // enable or disable gasless transactions
