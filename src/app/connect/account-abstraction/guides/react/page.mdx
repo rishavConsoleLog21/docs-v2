@@ -85,12 +85,12 @@ To use the [Connect Wallet](/references/react/v4/ConnectWallet) component to con
 we need to pass a [`smartWallet`](/references/react/v4/smartWallet) to the `supportedWallets` prop in [`ThirdwebProvider`](/references/react/v4/ThirdwebProvider).
 
 You can change the configuration based on your requirements,
-but for this demo, we will enable **gasless transactions** and use a [EmbeddedWallet](/references/react/v4/embeddedWallet) as the personal wallet.
+but for this demo, we will enable **gasless transactions** and use a [InAppWallet](/references/react/v4/inAppWallet) as the personal wallet.
 
 ```tsx
-import { smartWallet, embeddedWallet } from "@thirdweb-dev/react";
+import { smartWallet, inAppWallet } from "@thirdweb-dev/react";
 
-const personalWallet = embeddedWallet(); // or any other wallet
+const personalWallet = inAppWallet(); // or any other wallet
 
 export const smartWalletConfig = smartWallet(personalWallet, {
 	factoryAddress: "your-factory-address",
@@ -139,7 +139,7 @@ import { useSmartWallet, metamaskWallet } from "@thirdweb-dev/react";
 
 function Example() {
 	// here we're using metamask as the personal wallet
-	// can be any other wallet, including localWallet(), embeddedWallet(), etc
+	// can be any other wallet, including localWallet(), inAppWallet(), etc
 	const { connect } = useSmartWallet(metamaskWallet(), {
 		factoryAddress: "your-factory-address",
 		gasless: true,

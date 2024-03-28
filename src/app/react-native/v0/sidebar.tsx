@@ -47,7 +47,7 @@ export const sidebar: SideBar = {
 					href: `${walletsSlug}/coinbase`,
 				},
 				{
-					name: "Embedded Wallet",
+					name: "In-App Wallet",
 					href: `${walletsSlug}/embedded-wallet`,
 				},
 				{

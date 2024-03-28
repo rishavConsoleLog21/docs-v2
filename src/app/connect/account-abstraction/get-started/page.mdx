@@ -63,7 +63,7 @@ Learn more about creating an API key and restricting which contracts the smart a
 
 Use the following code to integrate account abstraction into your apps. This will:
 
-- Connect your users to their smart account based on their personal wallet (can be any EOA wallet such as embedded wallet or metamask).
+- Connect your users to their smart account based on their personal wallet (can be any EOA wallet such as in-app wallet or metamask).
 - Automatically deploy the individual account contracts for your users when they do their first onchain transaction.
 - Handle all transaction gas costs via the thirdweb paymaster.
 - Select your deployed account factory and client ID to get use the thirdweb infrastructure.
@@ -86,7 +86,7 @@ All transactions performed with the smart account will then be gasless.
 
 <TabsContent value="react">
 ```tsx
-import { ThirdwebProvider, ConnectWallet, smartWallet, embeddedWallet } from "@thirdweb-dev/react";
+import { ThirdwebProvider, ConnectWallet, smartWallet, inAppWallet } from "@thirdweb-dev/react";
 
 export default function App() {
 return (
@@ -95,7 +95,7 @@ return (
       activeChain="sepolia"
       supportedWallets={[
         smartWallet(
-          embeddedWallet(), // any personal wallet
+          inAppWallet(), // any personal wallet
           {
             factoryAddress: "0x...", // your deployed factory address
             gasless: true // enable or disable gasless transactions
